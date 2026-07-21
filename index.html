@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Infinity Pensum</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* Pantalla de felicitación oculta hasta completar la carrera */
+        .oculto {
+            display:none !important;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BOTÓN MODO OSCURO -->
+
+    <button id="botonTema">
+        🌙
+    </button>
+
+
+    <header class="hero">
+
+        <div class="hero-texto">
+
+            <h1>
+                ♾️ Infinity Pensum
+                <img src="img/coraazul.gif" alt="Corazón Azul" class="gif-corazon-inline">
+            </h1>
+
+            <h2>Brenda Salcedo</h2>
+
+            <p>
+                Licenciatura en Ciencias Naturales y Educación Ambiental
+            </p>
+
+        </div>
+
+        <!-- Gojo Feliz PNG en la cabecera -->
+        <div class="hero-gojo">
+            <img src="img/gojofeliz.png" alt="Gojo Feliz" class="gojo-avatar">
+        </div>
+
+    </header>
+
+
+    <section class="panel-progreso">
+
+        <div class="estadistica">
+
+            <h3>Materias aprobadas</h3>
+
+            <p id="materiasAprobadas">0</p>
+
+        </div>
+
+
+        <div class="estadistica">
+
+            <h3>Créditos aprobados</h3>
+
+            <p id="creditosAprobados">0</p>
+
+        </div>
+
+
+        <div class="estadistica">
+
+            <h3>
+                Progreso
+                <img src="img/corazonrosa.gif" alt="Corazones Rosa" class="gif-corazon-inline">
+            </h3>
+
+            <p id="porcentaje">0%</p>
+
+        </div>
+
+    </section>
+
+
+    <div class="barra">
+
+        <div id="barraProgreso"></div>
+
+    </div>
+
+
+    <!-- FELICITACIÓN (solo aparece al 100%) -->
+
+    <section id="pantallaGraduacion" class="graduacion oculto">
+
+        <div class="graduacion-contenido">
+
+            <h1>🎓 ¡Felicidades, Brenda!</h1>
+
+            <h2>Has completado tu carrera</h2>
+
+            <p>
+                Terminaste la Licenciatura en Ciencias Naturales
+                y Educación Ambiental.
+            </p>
+
+            <div class="confeti-box">
+                <img src="img/confeti.gif" alt="Confeti" class="gif-confeti">
+            </div>
+
+            <div class="confeti">
+
+                🎉 🎊 ✨ 🎓 ✨ 🎊 🎉
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <main class="contenedor-semestres">
+
+        <section class="semestre">
+            <h3>Semestre I</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre II</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre III</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre IV</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre V</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre VI</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre VII</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre VIII</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre IX</h3>
+        </section>
+
+        <section class="semestre">
+            <h3>Semestre X</h3>
+        </section>
+
+    </main>
+
+
+    <script src="data/materias.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

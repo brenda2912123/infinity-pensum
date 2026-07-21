@@ -1,0 +1,447 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ================= VARIABLES ================= */
+
+:root{
+    --fondo:#ffffff;
+    --fondo-gradiente:#eef8ff;
+    --texto:#35597D;
+    --texto-suave:#68839c;
+
+    --tarjeta:rgba(255,255,255,.88);
+
+    --azul:#63B7FF;
+    --azul-claro:#d7ebff;
+
+    --sombra:rgba(90,169,255,.18);
+}
+
+/* ================= MODO OSCURO ================= */
+
+body.oscuro{
+    --fondo:#101522;
+    --fondo-gradiente:#172238;
+    --texto:#e8f3ff;
+    --texto-suave:#b7c9dd;
+
+    --tarjeta:rgba(21, 30, 48, 0.88);
+
+    --azul:#7EC8FF;
+    --azul-claro:#26364d;
+
+    --sombra:rgba(0,0,0,.45);
+}
+
+/* ================= GENERAL ================= */
+
+body{
+    font-family:'Poppins',sans-serif;
+    background: url('img/fondoclaro.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height:100vh;
+    color:var(--texto);
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.oscuro{
+    background: url('img/fondoscuro.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ================= BOTON TEMA ================= */
+
+#botonTema{
+    position:fixed;
+    top:25px;
+    right:30px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    font-size:22px;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    z-index:1000;
+    transition:.3s;
+}
+
+#botonTema:hover{
+    transform:scale(1.1);
+}
+
+body.oscuro #botonTema{
+    background:#26364d;
+    color: #fff;
+}
+
+/* ================= HEADER ================= */
+
+.hero{
+    width:90%;
+    max-width:1400px;
+    margin:40px auto 25px;
+    background:var(--tarjeta);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:35px 40px;
+    text-align:center;
+    box-shadow:0 12px 25px var(--sombra);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero h1{
+    color:var(--azul);
+    font-size:48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hero h2{
+    margin-top:5px;
+}
+
+.hero p{
+    margin-top:5px;
+    color:var(--texto-suave);
+}
+
+/* ================= PANEL ================= */
+
+.panel-progreso{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.estadistica{
+    background:var(--tarjeta);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 20px var(--sombra);
+}
+
+.estadistica h3{
+    color:var(--azul);
+    margin-bottom:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estadistica p{
+    font-size:30px;
+    font-weight:bold;
+}
+
+/* ================= BARRA ================= */
+
+.barra{
+    width:90%;
+    max-width:1400px;
+    height:18px;
+    margin:25px auto 40px;
+    background:var(--azul-claro);
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#barraProgreso{
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        #7EC8FF,
+        #63B7FF
+    );
+    transition:.4s;
+}
+
+/* ================= PANTALLA CELEBRACIÓN (100%) ================= */
+
+.graduacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.graduacion-contenido {
+    background: var(--tarjeta);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--azul);
+}
+
+.graduacion-contenido h1 {
+    color: var(--azul);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.graduacion-contenido h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* ================= SEMESTRES ================= */
+
+.contenedor-semestres{
+    width:95%;
+    max-width:1700px;
+    margin:auto auto 50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.semestre{
+    background:var(--tarjeta);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 10px 25px var(--sombra);
+}
+
+.semestre h3{
+    color:var(--azul);
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* ================= MATERIAS ================= */
+
+.materia{
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:15px;
+    transition:.25s;
+    cursor:pointer;
+    box-shadow:0 5px 15px var(--sombra);
+}
+
+.materia:hover{
+    transform:translateY(-3px);
+}
+
+.materia h4{
+    margin-bottom:10px;
+}
+
+.materia p{
+    margin-top:5px;
+    font-size:14px;
+}
+
+/* ================= ESTADOS ================= */
+
+.pendiente{
+    background:#F7F9FC;
+    border-left:6px solid #C8D3DF;
+}
+
+.cursando{
+    background:#EDF8FF;
+    border-left:6px solid #63B7FF;
+}
+
+.aprobada{
+    background:#EEFCEB;
+    border-left:6px solid #73D27A;
+    opacity:.85;
+}
+
+.aprobada h4{
+    text-decoration:line-through;
+}
+
+.bloqueada{
+    background:#f1f1f1;
+    border-left:6px solid #777;
+    cursor:not-allowed;
+    opacity:.75;
+}
+
+/* ================= AJUSTES MODO OSCURO ================= */
+
+body.oscuro .hero,
+body.oscuro .estadistica,
+body.oscuro .semestre,
+body.oscuro .graduacion-contenido{
+    color:#e8f3ff;
+}
+
+body.oscuro .hero p{
+    color:#b7c9dd;
+}
+
+body.oscuro .pendiente{
+    background:#202b3d;
+    border-left-color:#9aa8b8;
+    color:#e8f3ff;
+}
+
+body.oscuro .cursando{
+    background:#183047;
+    border-left-color:#7EC8FF;
+    color:#e8f3ff;
+}
+
+body.oscuro .aprobada{
+    background:#193324;
+    border-left-color:#73D27A;
+    color:#e8f3ff;
+}
+
+body.oscuro .bloqueada{
+    background:#2b2b2b;
+    border-left-color:#999;
+    color:#eeeeee;
+}
+
+body.oscuro .materia h4,
+body.oscuro .materia p,
+body.oscuro .estado,
+body.oscuro .bloqueo{
+    color:#e8f3ff;
+}
+
+body.oscuro .semestre h3,
+body.oscuro .estadistica h3{
+    color:#7EC8FF;
+}
+
+/* ==========================================
+   CONTROL DE TAMAÑOS DE IMÁGENES Y GIFS
+   ========================================== */
+
+/* Corazones en los títulos */
+.gif-corazon-inline {
+    width: 38px !important;
+    height: 38px !important;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Avatar de Gojo en el encabezado */
+.hero-gojo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gojo-avatar {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(126, 200, 255, 0.7));
+}
+
+/* Chibis de Gojo dentro de las tarjetas de materias */
+.gojo-icono {
+    width: 55px !important;
+    height: 55px !important;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+    transition: transform 0.2s ease;
+}
+
+.materia:hover .gojo-icono {
+    transform: scale(1.15);
+}
+
+/* Confeti en el modal de graduación */
+.gif-confeti {
+    max-width: 180px !important;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Animación de vibración para materia bloqueada */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* ==========================================
+   RESPONSIVE (CELULAR Y TABLET)
+   ========================================== */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 25px 15px;
+        width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        flex-wrap: wrap;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .gojo-avatar {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .panel-progreso {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .estadistica {
+        padding: 15px;
+    }
+
+    .estadistica p {
+        font-size: 24px;
+    }
+
+    .contenedor-semestres {
+        grid-template-columns: 1fr;
+        width: 95%;
+        gap: 15px;
+    }
+
+    #botonTema {
+        top: 15px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+}
